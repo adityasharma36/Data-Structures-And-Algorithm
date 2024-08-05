@@ -70,19 +70,112 @@
 //     return 0;
 // }
 
-#include<iostream>
-#include<cmath>
-using namespace std;
-int main(){
-    int array[] = {10,20,40,50,60};
-    int start = 0;
-    int end = 4;
-    while(start<end){
-        swap(array[start],array[end]);
-        start++;
-        end--;
-    }
-    for(int i = 0;i<5;i++){
-        cout<<array[i]<<" ";
-        }
-}
+// #include<iostream>
+// #include<cmath>
+// using namespace std;
+// int main(){
+//     int array[] = {10,20,40,50,60};
+//     int start = 0;
+//     int end = 4;
+//     while(start<end){
+//         swap(array[start],array[end]);
+//         start++;
+//         end--;
+//     }
+//     for(int i = 0;i<5;i++){
+//         cout<<array[i]<<" ";
+//         }
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void count(int array[]){
+//     int zeroCount=0;
+//     int oneCount = 0;
+//     for(int i = 0;i<5;i++){
+//         if(array[i]==0){
+//             zeroCount++;
+//         }
+//         if(array[i]==1){
+//             oneCount++;
+//         }
+//     }
+//     cout<<"zero is in array "<<zeroCount<<endl;
+//     cout<<"one is in array "<<oneCount<<endl;
+// }
+// int main(){
+//     int array[]= {10,20,30,40,50};
+//     count(array);
+// }
+
+// #include<iostream>
+// #include<limits.h>
+// #include<vector>
+// using namespace std;
+// int maixmumNum(int arra[]){
+//     int max = INT_MIN;
+//     int min = INT_MAX;
+//     for(int i = 0;i<7;i++){
+//         if(arra[i]>max){
+//             max = arra[i];
+//         }
+//     } for(int i = 0;i<7;i++){
+//         if(arra[i]<min){
+//             min = arra[i];
+//         }
+//     };
+//     cout<<min<<endl;
+
+//     cout<<max<<endl;
+    
+
+// }
+// int main(){
+//     int arra[] = {10,20,30,40,50,70,100};
+//     maixmumNum(arra);
+// }
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int extreamePrint(int array[]){
+//     int start = 0;
+//     int end = 6;
+//     while(start<=end){
+//         if(array[start]==array[end]){
+//             cout<<array[start]<<" ";
+//             start++;
+//         }
+//         else if(start<end){
+//             cout<<array[start]<<" ";
+//             cout<<array[end]<<" ";
+//             start++;
+//             end--;
+//         }
+//     }
+
+
+// }
+// int main(){
+//     int array[]= {10,20,30,40,50,60,70};
+//     extreamePrint(array);
+// }
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int reverseArray(int array[]){
+//     int start = 0;
+//     int end = 9;
+//     while(start<end){
+//         swap(array[start],array[end]);
+//         start++;
+//         end--;
+//     }
+//     for(int i = 0;i<10;i++){
+//         cout<<array[i]<<" ";
+//     }
+// };
+// int main(){
+//     int array[]= {1,3,5,7,9,11,13,15,17,19};
+//     reverseArray(array);
+// }
