@@ -79,6 +79,54 @@ void insertAtPosition(int place,int value,Node*&head,Node*& tail){
         forward->prev = newNode;
     }
 }
+bool isPresent(int data,Node*&head,Node*&tail){
+    Node* temp = head;
+    while(temp!=NULL){
+        if(temp->data == data){
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
+void deleteFromPositon(int position,Node*&head,Node*&tail){
+    int length = getLength(head);
+    if(head==NULL && tail ==NULL){
+        cout<<"no nodes to delet"<<endl;
+        return;
+    }
+    else if(head==tail){
+        Node* temp = head;
+        head = NULL;
+        tail = NULL;
+        delete temp;
+    }else if(position==1){
+        Node * temp = head;
+        head = head->next;
+        head->prev = NULL;
+        temp->next = NULL;
+        delete temp;
+    }
+    else if(position==length){
+        Node* temp = tail;
+        tail = temp->prev;
+        tail ->next = NULL;
+        temp->prev = NULL;
+        delete temp;
+    }else{
+        Node* backWard = head;
+        for(int i = 0;i<position-2;i++){
+            backWard=backWard->next;
+        }
+        Node* curr = backWard->next;
+        Node* forward = curr->next;
+        backWard->next = forward;
+        forward->prev = backWard;
+        curr->prev = NULL;
+        curr->next = NULL;
+        delete curr;
+    }
+}
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
@@ -90,6 +138,8 @@ int main(){
     insertAtTail(20,head,tail);
     print(head);
     insertAtPosition(2,30,head,tail);
+    deleteFromPositon(2,head,tail);
     print(head);
+    // cout<<isPresent(80,head,tail);
     return 0;
 };
