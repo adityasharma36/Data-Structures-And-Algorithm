@@ -21,6 +21,19 @@ Node* insertAtHead(int value,Node*&head,Node*&tail){
     }
     return head;
 }
+Node* middleElement(Node*&head){
+    Node* slow = head;
+    Node*fast = head;
+    while(fast!=NULL){
+        fast = fast->next;
+        if(fast!=NULL){
+            fast = fast->next;
+            slow = slow->next;
+
+        }
+    }
+    return slow;
+}
 
 Node* reverseList(Node*&prev,Node*&curr){
     if(curr==NULL){
@@ -43,6 +56,14 @@ Node* reverseLists(Node* head){
     }
     cout<<"NULL"<<endl;
 }
+void print(Node* head){
+    Node* temp = head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ->";
+        temp = temp->next;
+    }
+    cout<<"NUll"<<endl;
+}
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
@@ -50,7 +71,9 @@ int main(){
     insertAtHead(20,head,tail);
     insertAtHead(30,head,tail);
     insertAtHead(40,head,tail);
-    // print(head);
-    reverseLists(head);
+    middleElement(head);
+    print(head);
+    // reverseLists(head);
+
     return 0;
 }
