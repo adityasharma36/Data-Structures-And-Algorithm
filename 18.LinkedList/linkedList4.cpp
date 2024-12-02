@@ -22,19 +22,19 @@ void print(Node*& head){
         temp  = temp->next;
     }
 }
-// bool hasCycle(Node*head){
-//     unordered_map<Node*,bool>m;
-//     Node* temp = head;
-//     while(temp!=NULL){
-//         if(m[temp]==true){
-//             return true;
-//         }else{
-//             m[temp]= true;
-//         }
-//         temp = temp->next;
-//     }
-//     return false;
-// }
+bool hasCycle(Node*head){
+    unordered_map<Node*,bool>m;
+    Node* temp = head;
+    while(temp!=NULL){
+        if(m[temp]==true){
+            return true;
+        }else{
+            m[temp]= true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
 Node* deleteDuplicates(Node*& head){
     if(head==NULL){
         return head;
@@ -53,7 +53,6 @@ Node* deleteDuplicates(Node*& head){
             prev = prev->next;
             curr = curr->next;
         }
-        curr = head->next;
     }
     return head;
 }
